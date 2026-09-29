@@ -78,10 +78,12 @@ function renderReviews(reviews) {
     const article = document.createElement('article');
     article.className = 'review-card';
 
+    const rating = Math.min(5, Math.max(1, Number(review.rating) || 1));
+
     const stars = document.createElement('div');
     stars.className = 'review-stars';
-    stars.setAttribute('aria-label', `${review.rating} de 5 estrellas`);
-    stars.textContent = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+    stars.setAttribute('aria-label', `${rating} de 5 estrellas`);
+    stars.textContent = '★'.repeat(rating) + '☆'.repeat(5 - rating);
 
     const quote = document.createElement('blockquote');
     quote.textContent = `“${review.comment}”`;
