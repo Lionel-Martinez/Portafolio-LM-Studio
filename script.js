@@ -72,7 +72,7 @@ function renderReviews(reviews) {
   const container = document.getElementById('reviews-list');
   if (!container || !Array.isArray(reviews) || reviews.length === 0) return;
 
-  container.innerHTML = '';
+  container.replaceChildren();
 
   reviews.forEach(review => {
     const article = document.createElement('article');
