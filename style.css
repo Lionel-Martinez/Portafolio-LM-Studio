@@ -333,3 +333,13 @@ body {
   }
   .dark .availability-card { box-shadow: 4px 4px 0 #fff; }
 }
+
+/* Indicador de foco para navegación con teclado */
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.dark :focus-visible {
+  outline-color: #60a5fa;
+}
