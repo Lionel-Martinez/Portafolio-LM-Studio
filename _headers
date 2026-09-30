@@ -4,7 +4,7 @@
   # CSP - MODO REPORT-ONLY
   # ==========================================
 
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://hcaptcha.com https://*.hcaptcha.com; img-src 'self' data: https://hcaptcha.com https://*.hcaptcha.com; font-src 'self' data: https://cdn.jsdelivr.net https://hcaptcha.com https://*.hcaptcha.com; connect-src 'self' https://api.web3forms.com https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com; frame-src 'self' https://hcaptcha.com https://*.hcaptcha.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; frame-ancestors 'self';
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' https://cdn.jsdelivr.net https://hcaptcha.com https://*.hcaptcha.com; img-src 'self' data: https://hcaptcha.com https://*.hcaptcha.com; font-src 'self' data: https://cdn.jsdelivr.net https://hcaptcha.com https://*.hcaptcha.com; connect-src 'self' https://api.web3forms.com https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com; frame-src 'self' https://hcaptcha.com https://*.hcaptcha.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; frame-ancestors 'self';
 
   # ==========================================
   # SECURITY HEADERS

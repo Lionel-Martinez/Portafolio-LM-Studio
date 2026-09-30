@@ -27,6 +27,7 @@ body {
 .hero-section {
   position: relative;
   isolation: isolate;
+  background-image: url('./img/HTML.webp');
 }
 
 .hero-section::after {
