@@ -1,9 +1,11 @@
 {
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
+    "sass": "^1.105.1",
     "tailwindcss": "^4.3.3"
   },
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./tailwind.css --minify"
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --minify",
+    "build:sass": "sass ./scss/main.scss ./css/style.css --style=compressed --no-source-map"
   }
 }

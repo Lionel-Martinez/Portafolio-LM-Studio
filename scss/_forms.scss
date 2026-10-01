@@ -1,0 +1,143 @@
+@use 'variables' as *;
+
+.contact-form {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: .45rem;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.contact-form label span {
+  font-weight: 500;
+  color: $color-text-muted;
+}
+
+.dark .contact-form label span {
+  color: #94a3b8;
+}
+
+.contact-form input:not([type="checkbox"]),
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 2px solid $color-text;
+  border-radius: $radius-lg;
+  background: $color-background-soft;
+  color: $color-text;
+  padding: .75rem;
+  font-size: .9rem;
+  outline: none;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+}
+
+.dark .contact-form input:not([type="checkbox"]),
+.dark .contact-form select,
+.dark .contact-form textarea {
+  border-color: $color-text-white;
+  background: $color-background-dark-deep;
+  color: $color-text-white;
+}
+
+.contact-form input:not([type="checkbox"]):focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: $color-primary;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .2);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  border: 2px solid $color-border;
+  border-radius: $radius-xl;
+  background: $color-primary;
+  color: $color-text-white;
+  padding: .8rem 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background-color $transition-fast, transform $transition-fast;
+}
+
+.submit-button:hover {
+  background: $color-primary-dark;
+  transform: translateY(-1px);
+}
+
+.dark .submit-button {
+  border-color: $color-text-white;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 800;
+  font-size: .88rem;
+  color: $color-text;
+}
+
+.dark .contact-links a {
+  color: $color-text-white;
+}
+
+.contact-links a:hover {
+  color: $color-primary;
+  text-decoration: underline;
+}
+
+.contact-links img {
+  width: 21px;
+  height: 21px;
+}
+
+.form-security-note {
+  margin: -.25rem 0 0;
+  text-align: center;
+  font-size: .78rem;
+  color: $color-text-muted;
+}
+
+.dark .form-security-note {
+  color: #94a3b8;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.consent-check {
+  display: flex;
+  gap: .65rem;
+  align-items: flex-start;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.consent-check input {
+  margin-top: .2rem;
+}

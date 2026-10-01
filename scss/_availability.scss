@@ -1,0 +1,59 @@
+@use 'variables' as *;
+
+.availability-section {
+  border-top: 2px solid $color-border;
+  border-bottom: 2px solid $color-border;
+  background: #f8fafc;
+}
+
+.dark .availability-section {
+  border-color: $color-text-white;
+  background: $color-background-dark-deep;
+}
+
+.availability-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.5rem;
+  border: 2px solid $color-border;
+  border-radius: $radius-3xl;
+  background: $color-background;
+  box-shadow: $shadow-availability;
+}
+
+.dark .availability-card {
+  border-color: $color-text-white;
+  background: $color-background-dark-alt;
+  box-shadow: 6px 6px 0 $color-text-white;
+}
+
+.availability-icon {
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid $color-border;
+  border-radius: $radius-2xl;
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+
+.dark .availability-icon {
+  border-color: $color-text-white;
+  color: $color-text-white;
+}
+
+.availability-card h2 {
+  margin: .35rem 0 .5rem;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.15;
+  font-weight: 900;
+}
+
+.availability-card p {
+  margin: 0;
+  max-width: 52rem;
+  line-height: 1.7;
+}

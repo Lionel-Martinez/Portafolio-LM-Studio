@@ -1,0 +1,106 @@
+@use 'variables' as *;
+
+.reviews-invite {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+  padding: 2rem;
+  text-align: center;
+  border: 2px dashed currentColor;
+  border-radius: $radius-3xl;
+  background: rgba(255, 255, 255, .55);
+}
+
+.dark .reviews-invite {
+  background: rgba(15, 23, 42, .55);
+}
+
+.reviews-invite h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: .6rem;
+}
+
+.reviews-invite p {
+  max-width: 620px;
+  margin: 0 auto 1.25rem;
+  color: $color-text-secondary;
+}
+
+.dark .reviews-invite p {
+  color: $color-text-light;
+}
+
+.review-stars {
+  font-size: 1.25rem;
+  letter-spacing: .2rem;
+  margin-bottom: .75rem;
+}
+
+.reviews-empty h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: .6rem;
+}
+
+.reviews-empty p {
+  max-width: 620px;
+  margin: 0 auto 1.25rem;
+  color: $color-text-secondary;
+}
+
+.dark .reviews-empty p {
+  color: $color-text-light;
+}
+
+.review-form-card {
+  padding: 2rem;
+  border: 2px solid $color-border;
+  border-radius: $radius-3xl;
+  background: $color-background;
+  box-shadow: $shadow-review;
+}
+
+.dark .review-form-card {
+  background: $color-background-dark;
+  border-color: $color-text-white;
+}
+
+.reviews-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.review-card {
+  max-width: 820px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1.5rem;
+  border: 2px solid $color-border;
+  border-radius: $radius-3xl;
+  background: $color-background;
+}
+
+.dark .review-card {
+  border-color: $color-text-white;
+  background: $color-background-dark;
+}
+
+.review-card blockquote {
+  margin: .5rem 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.review-author {
+  margin: 0;
+  font-weight: 900;
+}
+
+.review-role {
+  font-weight: 600;
+  color: $color-text-muted;
+}
+
+.dark .review-role {
+  color: #94a3b8;
+}

@@ -1,0 +1,37 @@
+$color-primary: #2563eb;
+$color-primary-dark: #1d4ed8;
+$color-primary-light: #60a5fa;
+$color-primary-soft: #93c5fd;
+
+$color-text: #111827;
+$color-text-secondary: #4b5563;
+$color-text-muted: #6b7280;
+$color-text-light: #cbd5e1;
+$color-text-white: #fff;
+
+$color-border: #000;
+$color-border-light: #d1d5db;
+$color-border-dark: #475569;
+
+$color-background: #fff;
+$color-background-soft: #f9fafb;
+$color-background-section: #f3f4f6;
+$color-background-dark: #1e293b;
+$color-background-dark-deep: #0f172a;
+$color-background-dark-alt: #111827;
+
+$radius-sm: .25rem;
+$radius-md: .375rem;
+$radius-lg: .5rem;
+$radius-xl: .6rem;
+$radius-2xl: .75rem;
+$radius-3xl: 1rem;
+
+$shadow-card: 4px 4px 0 $color-border;
+$shadow-card-hover: 7px 7px 0 $color-border;
+$shadow-availability: 6px 6px 0 $color-border;
+$shadow-availability-mobile: 4px 4px 0 $color-border;
+$shadow-review: 0 12px 30px rgba(0, 0, 0, .08);
+
+$transition-fast: .2s ease;
+$transition-medium: .4s ease;
