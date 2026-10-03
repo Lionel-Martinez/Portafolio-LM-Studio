@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Precios · LM Studio</title>
+  <meta
+    name="description"
+    content="Cotizador interactivo de LM Studio. Configurá tu proyecto web y obtené una estimación inicial."
+  >
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link
+    href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+    rel="stylesheet"
+    integrity="sha384-hf6mlmLkYBCbI3ilbmULeHAWhqQbGT0V2Fesaf5B4P2Yo1rz9VU1P7ElDCvkyrLX"
+    crossorigin="anonymous"
+  >
+
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src="../js/theme.js"></script>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+
+  <header>
+    <nav class="border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+      <div class="mx-auto flex max-w-screen-xl items-center justify-between p-4">
+
+        <a href="../index.html" class="flex items-center">
+          <img
+            src="../img/logo.webp"
+            class="h-10 w-auto"
+            alt="LM Studio"
+          >
+        </a>
+
+        <div class="flex items-center gap-3">
+          <button
+            id="theme-toggle"
+            type="button"
+            class="rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+            aria-label="Cambiar tema"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path d="M17.293 13.293A8 8 0 016.707 2.707 8.001 8.001 0 1017.293 13.293z"></path>
+            </svg>
+
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 011.414-1.414zM17 9a1 1 0 100 2h1a1 1 0 100-2h-1zM5.05 14.95a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707zM5 9H4a1 1 0 100 2h1a1 1 0 100-2zm5 8a1 1 0 01-1 1v1a1 1 0 102 0v-1a1 1 0 01-1-1zM5.05 5.05l-.707-.707A1 1 0 015.757 2.93l.707.707A1 1 0 015.05 5.05z"></path>
+            </svg>
+          </button>
+
+          <a
+            href="../index.html"
+            class="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+          >
+            Volver al inicio
+          </a>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="mx-auto max-w-screen-xl px-4 pt-8">
+      <div
+        id="promoBanner"
+        class="hidden"
+        aria-live="polite"
+      ></div>
+    </section>
+
+    <section class="mx-auto max-w-screen-xl px-4 py-10 sm:py-14">
+
+      <div class="mx-auto mb-10 max-w-3xl text-center">
+
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+          LM Studio · Cotizador
+        </p>
+
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
+          Calculá una estimación para tu proyecto web.
+        </h1>
+
+        <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+          Elegí las características de tu sitio y mirá el precio moverse
+          en tiempo real. Es una referencia inicial para ayudarte a definir
+          el alcance de tu proyecto.
+        </p>
+
+      </div>
+
+      <div class="mb-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+          <p class="text-sm font-semibold">Respuesta rápida</p>
+          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+            Respondo consultas en menos de 24 hs.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+          <p class="text-sm font-semibold">Pago dividido</p>
+          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+            50% al inicio y 50% a la entrega.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+          <p class="text-sm font-semibold">2 rondas de revisión</p>
+          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+            Incluidas antes de la entrega.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+          <p class="text-sm font-semibold">Trato directo</p>
+          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+            Comunicación directa conmigo.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mb-8">
+
+        <div class="mb-3 flex items-center justify-between text-sm">
+          <span id="stepLabel" class="font-semibold text-blue-600 dark:text-blue-400">
+            Paso 1 de 5
+          </span>
+
+          <span
+            id="progressPercent"
+            class="font-medium text-gray-500 dark:text-gray-400"
+          >
+            20%
+          </span>
+        </div>
+
+        <div
+          class="h-2 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700"
+          role="progressbar"
+          aria-label="Progreso del cotizador"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            id="progressBar"
+            class="h-full rounded-full bg-blue-600 transition-all duration-300"
+          ></div>
+        </div>
+
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
+
+        <div class="space-y-8">
+
+          <!-- Paso 1 -->
+          <section
+            class="step rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+            data-step="1"
+          >
+            <div class="mb-6">
+              <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                Paso 1
+              </span>
+
+              <h2 class="mt-1 text-2xl font-bold">
+                ¿Qué tipo de proyecto necesitás?
+              </h2>
+
+              <p class="mt-2 text-gray-600 dark:text-gray-400">
+                Elegí la estructura que mejor representa tu proyecto.
+              </p>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+
+              <label class="pricing-radio-card">
+                <input
+                  id="type-landing"
+                  type="radio"
+                  name="type"
+                  value="landing"
+                  data-label="Landing Page"
+                  data-price="70000"
+                  checked
+                >
+                <span>
+                  <strong>Landing Page</strong>
+                  <span>Una página enfocada en presentar un servicio, producto o propuesta.</span>
+                  <small id="price-landing">Desde $70.000</small>
+                  <small id="promo-landing" class="pricing-option-badge hidden"></small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="type-onepage"
+                  type="radio"
+                  name="type"
+                  value="onepage"
+                  data-label="One Page"
+                  data-price="100000"
+                >
+                <span>
+                  <strong>One Page</strong>
+                  <span>Todo el contenido principal de tu proyecto en una sola página.</span>
+                  <small id="price-onepage">Desde $100.000</small>
+                  <small id="promo-onepage" class="pricing-option-badge hidden"></small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="type-institutional"
+                  type="radio"
+                  name="type"
+                  value="institutional"
+                  data-label="Sitio institucional"
+                  data-price="140000"
+                >
+                <span>
+                  <strong>Sitio institucional</strong>
+                  <span>Una presencia web completa para una empresa, profesional o negocio.</span>
+                  <small id="price-institutional">Desde $140.000</small>
+                  <small id="promo-institutional" class="pricing-option-badge hidden"></small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="type-custom"
+                  type="radio"
+                  name="type"
+                  value="custom"
+                  data-label="Proyecto personalizado"
+                  data-price="200000"
+                >
+                <span>
+                  <strong>Proyecto personalizado</strong>
+                  <span>Una solución adaptada a necesidades específicas.</span>
+                  <small id="price-custom">Desde $200.000</small>
+                  <small id="promo-custom" class="pricing-option-badge hidden"></small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="type-portfolio"
+                  type="radio"
+                  name="type"
+                  value="portfolio"
+                  data-label="Portfolio"
+                  data-price="85000"
+                >
+                <span>
+                  <strong>Portfolio</strong>
+                  <span>Una web para mostrar trabajos, proyectos, servicios o trayectoria.</span>
+                  <small id="price-portfolio">Desde $85.000</small>
+                  <small id="promo-portfolio" class="pricing-option-badge hidden"></small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="type-shop"
+                  type="radio"
+                  name="type"
+                  value="shop"
+                  data-label="Tienda online"
+                  data-price="260000"
+                  disabled
+                >
+                <span>
+                  <strong>
+                    Tienda online
+                    <small class="pricing-option-badge">Próximamente</small>
+                  </strong>
+                  <span>Catálogo, carrito y funcionalidades de comercio electrónico.</span>
+                  <small id="price-shop">Desde $260.000</small>
+                </span>
+              </label>
+
+            </div>
+          </section>
+
+          <!-- Paso 2 -->
+          <section
+            class="step hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+            data-step="2"
+          >
+            <div class="mb-6">
+              <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                Paso 2
+              </span>
+
+              <h2 class="mt-1 text-2xl font-bold">
+                ¿Cuántas páginas necesitás?
+              </h2>
+
+              <p class="mt-2 text-gray-600 dark:text-gray-400">
+                Seleccioná aproximadamente cuántas páginas tendrá el sitio.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+
+              <label class="pricing-radio-card">
+                <input
+                  id="pages-small"
+                  type="radio"
+                  name="pages"
+                  value="small"
+                  data-label="1–3 páginas"
+                  data-price="0"
+                  checked
+                >
+                <span>
+                  <strong>1–3 páginas</strong>
+                  <span>Incluidas en el precio base.</span>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="pages-medium"
+                  type="radio"
+                  name="pages"
+                  value="medium"
+                  data-label="4–6 páginas"
+                  data-price="40000"
+                >
+                <span>
+                  <strong>4–6 páginas</strong>
+                  <span>Ampliación del contenido del sitio.</span>
+                  <small>+$40.000</small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="pages-large"
+                  type="radio"
+                  name="pages"
+                  value="large"
+                  data-label="7–10 páginas"
+                  data-price="85000"
+                >
+                <span>
+                  <strong>7–10 páginas</strong>
+                  <span>Para sitios con mayor cantidad de contenido.</span>
+                  <small>+$85.000</small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="pages-more"
+                  type="radio"
+                  name="pages"
+                  value="more"
+                  data-label="Más de 10 páginas"
+                  data-price="140000"
+                >
+                <span>
+                  <strong>Más de 10 páginas</strong>
+                  <span>Proyectos de mayor escala.</span>
+                  <small>+$140.000</small>
+                </span>
+              </label>
+
+            </div>
+          </section>
+
+          <!-- Paso 3 -->
+          <section
+            class="step hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+            data-step="3"
+          >
+            <div class="mb-6">
+              <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                Paso 3
+              </span>
+
+              <h2 class="mt-1 text-2xl font-bold">
+                Personalizá tu proyecto
+              </h2>
+
+              <p class="mt-2 text-gray-600 dark:text-gray-400">
+                Elegí las funciones y servicios adicionales que necesitás
+                para adaptar el proyecto a tus objetivos.
+              </p>
+            </div>
+
+            <div class="space-y-8">
+
+              <!-- Funciones incluidas -->
+              <div class="pricing-included-card rounded-xl border border-gray-200 bg-gray-50 p-5 dark:border-gray-700 dark:bg-gray-900">
+                <h3 class="mb-4 text-lg font-bold">
+                  Funciones incluidas
+                </h3>
+
+                <div class="grid gap-2 sm:grid-cols-2">
+                  <span>✓ Diseño responsive</span>
+                  <span>✓ WhatsApp y redes sociales</span>
+                  <span>✓ Formularios de contacto</span>
+                  <span>✓ Google Maps</span>
+                  <span>✓ FAQ y sección de equipo</span>
+                  <span>✓ Galería y portfolio básico</span>
+                  <span>✓ SEO técnico básico</span>
+                  <span>✓ Rendimiento y accesibilidad básica</span>
+                  <span>✓ Seguridad básica</span>
+                  <span>✓ Open Graph y Schema básico</span>
+                </div>
+              </div>
+
+              <!-- Diseño y experiencia -->
+              <div>
+                <h3 class="mb-4 text-lg font-bold">
+                  Diseño y experiencia
+                </h3>
+
+                <div class="grid gap-3 sm:grid-cols-2">
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="custom"
+                      data-label="Diseño personalizado"
+                      data-price="45000"
+                    >
+                    <span>
+                      <strong>Diseño personalizado</strong>
+                      <small>+$45.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="animations"
+                      data-label="Animaciones avanzadas"
+                      data-price="30000"
+                    >
+                    <span>
+                      <strong>Animaciones avanzadas</strong>
+                      <small>+$30.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="dark"
+                      data-label="Modo oscuro"
+                      data-price="25000"
+                    >
+                    <span>
+                      <strong>Modo oscuro</strong>
+                      <small>+$25.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="carousel"
+                      data-label="Carrusel avanzado"
+                      data-price="20000"
+                    >
+                    <span>
+                      <strong>Carrusel avanzado</strong>
+                      <small>+$20.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="loading"
+                      data-label="Pantalla de carga"
+                      data-price="15000"
+                    >
+                    <span>
+                      <strong>Pantalla de carga</strong>
+                      <small>+$15.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="microinteractions"
+                      data-label="Microinteracciones"
+                      data-price="25000"
+                    >
+                    <span>
+                      <strong>Microinteracciones</strong>
+                      <small>+$25.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="scroll-effects"
+                      data-label="Efectos avanzados al hacer scroll"
+                      data-price="25000"
+                    >
+                    <span>
+                      <strong>Efectos avanzados al hacer scroll</strong>
+                      <small>+$25.000</small>
+                    </span>
+                  </label>
+
+                </div>
+              </div>
+
+              <!-- Contenido -->
+              <div>
+                <h3 class="mb-4 text-lg font-bold">
+                  Contenido
+                </h3>
+
+                <div class="grid gap-3 sm:grid-cols-2">
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="gallery-advanced"
+                      data-label="Galería avanzada"
+                      data-price="25000"
+                    >
+                    <span>
+                      <strong>Galería avanzada</strong>
+                      <small>+$25.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="blog"
+                      data-label="Blog básico"
+                      data-price="40000"
+                    >
+                    <span>
+                      <strong>Blog básico</strong>
+                      <small>+$40.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="portfolio-advanced"
+                      data-label="Portfolio avanzado"
+                      data-price="35000"
+                    >
+                    <span>
+                      <strong>Portfolio avanzado</strong>
+                      <small>+$35.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="testimonials"
+                      data-label="Testimonios avanzados"
+                      data-price="20000"
+                    >
+                    <span>
+                      <strong>Testimonios avanzados</strong>
+                      <small>+$20.000</small>
+                    </span>
+                  </label>
+
+                </div>
+              </div>
+
+              <!-- SEO, rendimiento y seguridad -->
+              <div>
+                <h3 class="mb-4 text-lg font-bold">
+                  SEO, rendimiento y seguridad
+                </h3>
+
+                <div class="grid gap-3 sm:grid-cols-2">
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="seo-advanced"
+                      data-label="SEO avanzado"
+                      data-price="60000"
+                    >
+                    <span>
+                      <strong>SEO avanzado</strong>
+                      <small>Desde $60.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="structured-data"
+                      data-label="Datos estructurados avanzados"
+                      data-price="25000"
+                    >
+                    <span>
+                      <strong>Datos estructurados avanzados</strong>
+                      <small>+$25.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="performance"
+                      data-label="Optimización avanzada de rendimiento"
+                      data-price="40000"
+                    >
+                    <span>
+                      <strong>Optimización avanzada de rendimiento</strong>
+                      <small>+$40.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="security-advanced"
+                      data-label="Seguridad técnica avanzada"
+                      data-price="0"
+                    >
+                    <span>
+                      <strong>Seguridad técnica avanzada</strong>
+                      <small>Consultar</small>
+                    </span>
+                  </label>
+
+                </div>
+              </div>
+
+              <!-- Integraciones -->
+              <div>
+                <h3 class="mb-4 text-lg font-bold">
+                  Integraciones
+                </h3>
+
+                <div class="grid gap-3 sm:grid-cols-2">
+
+                  <label class="pricing-checkbox-card opacity-60">
+                    <input
+                      type="checkbox"
+                      data-extra="mercadopago"
+                      data-label="Mercado Pago"
+                      data-price="35000"
+                      disabled
+                    >
+                    <span>
+                      <strong>Mercado Pago</strong>
+                      <small>Desde $35.000 · Próximamente</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="api-crm"
+                      data-label="APIs / CRM"
+                      data-price="0"
+                    >
+                    <span>
+                      <strong>APIs / CRM</strong>
+                      <small>Consultar</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="automation"
+                      data-label="Automatizaciones"
+                      data-price="0"
+                    >
+                    <span>
+                      <strong>Automatizaciones</strong>
+                      <small>Consultar</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card">
+                    <input
+                      type="checkbox"
+                      data-extra="booking"
+                      data-label="Reservas / turnos"
+                      data-price="0"
+                    >
+                    <span>
+                      <strong>Reservas / turnos</strong>
+                      <small>Consultar</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card opacity-60">
+                    <input
+                      type="checkbox"
+                      data-extra="catalog"
+                      data-label="Catálogo avanzado"
+                      data-price="0"
+                      disabled
+                    >
+                    <span>
+                      <strong>Catálogo avanzado</strong>
+                      <small>Consultar · Próximamente</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-checkbox-card opacity-60">
+                    <input
+                      type="checkbox"
+                      data-extra="ecommerce"
+                      data-label="Ecommerce / tienda online"
+                      data-price="0"
+                      disabled
+                    >
+                    <span>
+                      <strong>Ecommerce / tienda online</strong>
+                      <small>Consultar · Próximamente</small>
+                    </span>
+                  </label>
+
+                </div>
+              </div>
+
+              <!-- Hosting y dominio -->
+              <div>
+                <h3 class="mb-4 text-lg font-bold">
+                  Hosting y dominio
+                </h3>
+
+                <div class="space-y-3">
+
+                  <label class="pricing-radio-card">
+                    <input
+                      id="host-none"
+                      type="radio"
+                      name="hosting"
+                      value="none"
+                      data-label="Sin gestión de hosting"
+                      data-price="0"
+                    >
+                    <span>
+                      <strong>Sin gestión de hosting</strong>
+                      <small>Vos contratás y gestionás el servicio.</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-radio-card">
+                    <input
+                      id="host-config"
+                      type="radio"
+                      name="hosting"
+                      value="config"
+                      data-label="Configuración de hosting"
+                      data-price="25000"
+                    >
+                    <span>
+                      <strong>Configuración de hosting</strong>
+                      <small>+$25.000</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-radio-card">
+                    <input
+                      id="host-managed"
+                      type="radio"
+                      name="hosting"
+                      value="managed"
+                      data-label="Hosting administrado"
+                      data-price="50000"
+                      checked
+                    >
+                    <span>
+                      <strong>Hosting administrado</strong>
+                      <small id="price-host-managed">+$50.000</small>
+                      <small class="pricing-option-badge">Recomendado</small>
+                    </span>
+                  </label>
+
+                </div>
+
+                <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+                  El servicio de hosting puede requerir un proveedor externo.
+                  Los costos del plan contratado, dominio, renovación u otros
+                  servicios de terceros pueden estar sujetos a cambios y se
+                  informarán antes de su contratación.
+                </p>
+              </div>
+
+              <!-- Entrega -->
+              <div>
+                <h3 class="mb-4 text-lg font-bold">
+                  Prioridad de entrega
+                </h3>
+
+                <div class="space-y-3">
+
+                  <label class="pricing-radio-card">
+                    <input
+                      id="del-standard"
+                      type="radio"
+                      name="delivery"
+                      value="standard"
+                      data-label="Entrega estándar"
+                      data-price="0"
+                      checked
+                    >
+                    <span>
+                      <strong>Entrega estándar</strong>
+                      <small>Sin costo adicional.</small>
+                    </span>
+                  </label>
+
+                  <label class="pricing-radio-card">
+                    <input
+                      id="del-priority"
+                      type="radio"
+                      name="delivery"
+                      value="priority"
+                      data-label="Entrega prioritaria"
+                      data-price="45000"
+                    >
+                    <span>
+                      <strong>Entrega prioritaria</strong>
+                      <small>+$45.000</small>
+                    </span>
+                  </label>
+
+                </div>
+
+                <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+                  La entrega prioritaria está sujeta a disponibilidad,
+                  alcance y complejidad del proyecto.
+                </p>
+              </div>
+
+            </div>
+          </section>
+          <!-- Paso 4 -->
+          <section
+            class="step hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+            data-step="4"
+          >
+            <div class="mb-6">
+              <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                Paso 4
+              </span>
+
+              <h2 class="mt-1 text-2xl font-bold">
+                ¿Querés mantenimiento después de la publicación?
+              </h2>
+
+              <p class="mt-2 text-gray-600 dark:text-gray-400">
+                Elegí el nivel de acompañamiento que necesitás después de
+                publicar el sitio.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+
+              <label class="pricing-radio-card">
+                <input
+                  id="maint-none"
+                  type="radio"
+                  name="maintenance"
+                  value="none"
+                  data-label="Sin mantenimiento"
+                  data-price="0"
+                  checked
+                >
+                <span>
+                  <strong>Sin mantenimiento</strong>
+                  <span>Gestionás los cambios por tu cuenta.</span>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="maint-basic"
+                  type="radio"
+                  name="maintenance"
+                  value="basic"
+                  data-label="Mantenimiento básico"
+                  data-price="25000"
+                >
+                <span>
+                  <strong>Mantenimiento básico</strong>
+                  <span>Hasta 3 cambios pequeños por mes. Respuesta estimada de 48–72 h.</span>
+                  <small>$25.000 / mes</small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="maint-standard"
+                  type="radio"
+                  name="maintenance"
+                  value="standard"
+                  data-label="Mantenimiento estándar"
+                  data-price="40000"
+                >
+                <span>
+                  <strong>Mantenimiento estándar</strong>
+                  <span>Hasta 5 cambios pequeños y 2 medianos. Respuesta estimada de 24–48 h.</span>
+                  <small>$40.000 / mes</small>
+                </span>
+              </label>
+
+              <label class="pricing-radio-card">
+                <input
+                  id="maint-premium"
+                  type="radio"
+                  name="maintenance"
+                  value="premium"
+                  data-label="Mantenimiento premium"
+                  data-price="65000"
+                >
+                <span>
+                  <strong>Mantenimiento premium</strong>
+                  <span>Cambios pequeños sin límite y prioridad de atención.</span>
+                  <small>$65.000 / mes</small>
+                </span>
+              </label>
+
+            </div>
+
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+
+              <div>
+                <label
+                  for="clientName"
+                  class="mb-2 block text-sm font-medium"
+                >
+                  Tu nombre
+                </label>
+
+                <input
+                  id="clientName"
+                  type="text"
+                  autocomplete="name"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                  placeholder="Nombre y apellido"
+                >
+              </div>
+
+              <div>
+                <label
+                  for="clientBusiness"
+                  class="mb-2 block text-sm font-medium"
+                >
+                  Empresa o negocio
+                  <span class="font-normal text-gray-500 dark:text-gray-400">
+                    (opcional)
+                  </span>
+                </label>
+
+                <input
+                  id="clientBusiness"
+                  type="text"
+                  autocomplete="organization"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                  placeholder="Nombre de tu empresa o negocio"
+                >
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Paso 5 -->
+          <section
+            class="step hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+            data-step="5"
+          >
+            <div class="mb-6">
+              <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                Paso 5
+              </span>
+
+              <h2 class="mt-1 text-2xl font-bold">
+                Resumen de tu proyecto
+              </h2>
+
+              <p class="mt-2 text-gray-600 dark:text-gray-400">
+                Revisá la configuración antes de consultar por el presupuesto
+                definitivo.
+              </p>
+            </div>
+
+            <div
+              id="finalSummary"
+              class="divide-y divide-gray-200 overflow-hidden rounded-xl border border-gray-200 dark:divide-gray-700 dark:border-gray-700"
+            ></div>
+
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+
+              <button
+                id="pdfBtn"
+                type="button"
+                class="rounded-lg bg-gray-900 px-5 py-3 text-sm font-semibold text-white hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+              >
+                Generar PDF
+              </button>
+
+              <a
+                id="contactBtn"
+                href="../index.html#contacto"
+                class="rounded-lg bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+              >
+                Consultar presupuesto
+              </a>
+
+              <a
+                id="whatsappBtn"
+                href="https://wa.me/?text=Hola%20LM%20Studio%2C%20quiero%20consultar%20por%20un%20proyecto%20web."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-lg border border-green-600 px-5 py-3 text-center text-sm font-semibold text-green-700 hover:bg-green-50 dark:text-green-400 dark:hover:bg-green-950"
+              >
+                Consultar por WhatsApp
+              </a>
+
+            </div>
+          </section>
+
+          <div class="flex items-center justify-between gap-4">
+
+            <button
+              id="prevBtn"
+              type="button"
+              class="invisible rounded-lg border border-gray-300 px-5 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+            >
+              ← Anterior
+            </button>
+
+            <button
+              id="nextBtn"
+              type="button"
+              class="ml-auto rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+            >
+              Continuar →
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- Resumen lateral -->
+        <aside
+          id="pricing-summary"
+          class="h-fit rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:sticky lg:top-24"
+        >
+
+          <div class="mb-5">
+            <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+              Tu presupuesto
+            </p>
+
+            <div class="mt-2 flex items-end justify-between gap-4">
+              <h2 class="text-2xl font-bold">
+                Estimación
+              </h2>
+
+              <span
+                id="priceValue"
+                class="text-2xl font-extrabold"
+                aria-live="polite"
+              >
+                $59.500
+              </span>
+            </div>
+
+            <p class="mt-1 text-right text-xs text-gray-500 dark:text-gray-400">
+              ARS · referencia
+            </p>
+          </div>
+
+          <div
+            id="sideSummary"
+            class="space-y-1 border-t border-gray-200 pt-4 dark:border-gray-700"
+          ></div>
+
+          <div class="mt-5 rounded-xl bg-gray-50 p-4 dark:bg-gray-900">
+            <div class="flex items-center justify-between gap-4">
+              <span class="text-sm text-gray-500 dark:text-gray-400">
+                Mantenimiento
+              </span>
+
+              <strong
+                id="monthlyValue"
+                class="text-sm"
+              >
+                Sin mantenimiento
+              </strong>
+            </div>
+          </div>
+
+          <button
+            id="resetBtn"
+            type="button"
+            class="mt-5 w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          >
+            Reiniciar cotizador
+          </button>
+
+          <p class="mt-4 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
+            La estimación es orientativa. El presupuesto definitivo se
+            confirma después de revisar el alcance real del proyecto.
+          </p>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+    <!-- Comparación -->
+    <section class="border-y border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
+      <div class="mx-auto max-w-screen-xl px-4 py-14">
+
+        <div class="mx-auto mb-8 max-w-3xl text-center">
+          <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+            Comparación
+          </p>
+
+          <h2 class="text-3xl font-bold">
+            ¿Qué tipo de proyecto puede encajar mejor?
+          </h2>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+          <table class="w-full min-w-[760px] text-left text-sm">
+            <thead class="border-b border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
+              <tr>
+                <th class="px-5 py-4 font-semibold">Tipo</th>
+                <th class="px-5 py-4 font-semibold">Responsive</th>
+                <th class="px-5 py-4 font-semibold">Páginas</th>
+                <th class="px-5 py-4 font-semibold">SEO básico</th>
+                <th class="px-5 py-4 font-semibold">Contacto</th>
+                <th class="px-5 py-4 font-semibold">Ideal para</th>
+              </tr>
+            </thead>
+
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+
+              <tr>
+                <td class="px-5 py-4 font-semibold">Landing Page</td>
+                <td class="px-5 py-4">Sí</td>
+                <td class="px-5 py-4">1–3</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Servicios, campañas y productos</td>
+              </tr>
+
+              <tr>
+                <td class="px-5 py-4 font-semibold">One Page</td>
+                <td class="px-5 py-4">Sí</td>
+                <td class="px-5 py-4">1</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Profesionales y pequeños negocios</td>
+              </tr>
+
+              <tr>
+                <td class="px-5 py-4 font-semibold">Institucional</td>
+                <td class="px-5 py-4">Sí</td>
+                <td class="px-5 py-4">4+</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Empresas y organizaciones</td>
+              </tr>
+
+              <tr>
+                <td class="px-5 py-4 font-semibold">Portfolio</td>
+                <td class="px-5 py-4">Sí</td>
+                <td class="px-5 py-4">1–3</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Trabajos, proyectos y trayectoria</td>
+              </tr>
+
+              <tr>
+                <td class="px-5 py-4 font-semibold">Personalizado</td>
+                <td class="px-5 py-4">Sí</td>
+                <td class="px-5 py-4">Según alcance</td>
+                <td class="px-5 py-4">Opcional</td>
+                <td class="px-5 py-4">Según proyecto</td>
+                <td class="px-5 py-4">Necesidades específicas</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mantenimiento -->
+    <section>
+      <div class="mx-auto max-w-screen-xl px-4 py-14">
+
+        <div class="mx-auto mb-8 max-w-3xl text-center">
+          <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+            Mantenimiento
+          </p>
+
+          <h2 class="text-3xl font-bold">
+            Acompañamiento después de publicar
+          </h2>
+
+          <p class="mt-3 text-gray-600 dark:text-gray-400">
+            Elegí el nivel de soporte que mejor se adapte a la frecuencia
+            de cambios que esperás realizar.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 dark:border-gray-700">
+          <table class="w-full min-w-[700px] text-left text-sm">
+            <thead class="border-b border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
+              <tr>
+                <th class="px-5 py-4 font-semibold">Plan</th>
+                <th class="px-5 py-4 font-semibold">Precio</th>
+                <th class="px-5 py-4 font-semibold">Cambios</th>
+                <th class="px-5 py-4 font-semibold">Respuesta</th>
+              </tr>
+            </thead>
+
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+
+              <tr>
+                <td class="px-5 py-4 font-semibold">Básico</td>
+                <td class="px-5 py-4">$25.000 / mes</td>
+                <td class="px-5 py-4">Hasta 3 pequeños</td>
+                <td class="px-5 py-4">48–72 h</td>
+              </tr>
+
+              <tr>
+                <td class="px-5 py-4 font-semibold">Estándar</td>
+                <td class="px-5 py-4">$40.000 / mes</td>
+                <td class="px-5 py-4">Hasta 5 pequeños + 2 medianos</td>
+                <td class="px-5 py-4">24–48 h</td>
+              </tr>
+
+              <tr>
+                <td class="px-5 py-4 font-semibold">Premium</td>
+                <td class="px-5 py-4">$65.000 / mes</td>
+                <td class="px-5 py-4">Pequeños sin límite</td>
+                <td class="px-5 py-4">Prioridad de atención</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="border-t border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
+      <div class="mx-auto max-w-screen-xl px-4 py-14">
+
+        <div class="mx-auto mb-8 max-w-3xl text-center">
+          <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+            Preguntas frecuentes
+          </p>
+
+          <h2 class="text-3xl font-bold">
+            Antes de empezar
+          </h2>
+        </div>
+
+        <div
+          id="pricing-faq"
+          data-accordion="collapse"
+          class="mx-auto max-w-3xl"
+        >
+
+          <h3 id="faq-heading-1">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 border-b border-gray-200 py-5 text-left font-semibold dark:border-gray-700"
+              data-accordion-target="#faq-body-1"
+              aria-expanded="false"
+              aria-controls="faq-body-1"
+            >
+              <span>¿Qué incluye el precio base?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-1" class="hidden" aria-labelledby="faq-heading-1">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              Incluye el desarrollo correspondiente al tipo de proyecto
+              seleccionado y el alcance indicado en el cotizador.
+            </p>
+          </div>
+
+          <h3 id="faq-heading-2">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 border-b border-gray-200 py-5 text-left font-semibold dark:border-gray-700"
+              data-accordion-target="#faq-body-2"
+              aria-expanded="false"
+              aria-controls="faq-body-2"
+            >
+              <span>¿Cómo se calcula la estimación?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-2" class="hidden" aria-labelledby="faq-heading-2">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              Se toma el precio base, se agregan las páginas, extras,
+              hosting y entrega seleccionados, y sobre ese subtotal se
+              aplica la promoción correspondiente. El mantenimiento mensual
+              se calcula por separado y no forma parte del descuento.
+            </p>
+          </div>
+
+          <h3 id="faq-heading-3">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 border-b border-gray-200 py-5 text-left font-semibold dark:border-gray-700"
+              data-accordion-target="#faq-body-3"
+              aria-expanded="false"
+              aria-controls="faq-body-3"
+            >
+              <span>¿Cuánto puede tardar un proyecto?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-3" class="hidden" aria-labelledby="faq-heading-3">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              El plazo depende del tipo de proyecto, cantidad de páginas,
+              funcionalidades y disponibilidad del contenido necesario.
+            </p>
+          </div>
+
+          <h3 id="faq-heading-4">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 border-b border-gray-200 py-5 text-left font-semibold dark:border-gray-700"
+              data-accordion-target="#faq-body-4"
+              aria-expanded="false"
+              aria-controls="faq-body-4"
+            >
+              <span>¿El hosting y dominio están incluidos?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-4" class="hidden" aria-labelledby="faq-heading-4">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              Podés elegir no incluir gestión, solicitar una configuración
+              inicial o contratar la gestión inicial desde el cotizador.
+              La opción seleccionada modifica la estimación.
+            </p>
+          </div>
+
+          <h3 id="faq-heading-5">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 border-b border-gray-200 py-5 text-left font-semibold dark:border-gray-700"
+              data-accordion-target="#faq-body-5"
+              aria-expanded="false"
+              aria-controls="faq-body-5"
+            >
+              <span>¿Puedo cambiar la configuración después?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-5" class="hidden" aria-labelledby="faq-heading-5">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              Sí. La configuración del cotizador es una referencia inicial.
+              El alcance definitivo se revisa antes de confirmar el proyecto.
+            </p>
+          </div>
+
+          <h3 id="faq-heading-6">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 border-b border-gray-200 py-5 text-left font-semibold dark:border-gray-700"
+              data-accordion-target="#faq-body-6"
+              aria-expanded="false"
+              aria-controls="faq-body-6"
+            >
+              <span>¿Qué pasa con los cambios después de la entrega?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-6" class="hidden" aria-labelledby="faq-heading-6">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              Los cambios posteriores pueden solicitarse como trabajos
+              adicionales o mediante uno de los planes de mantenimiento.
+            </p>
+          </div>
+
+          <h3 id="faq-heading-7">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 border-b border-gray-200 py-5 text-left font-semibold dark:border-gray-700"
+              data-accordion-target="#faq-body-7"
+              aria-expanded="false"
+              aria-controls="faq-body-7"
+            >
+              <span>¿Tengo que tener todo el contenido listo?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-7" class="hidden" aria-labelledby="faq-heading-7">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              No necesariamente el primer día, pero disponer del contenido
+              necesario ayuda a mantener la planificación del proyecto.
+            </p>
+          </div>
+
+          <h3 id="faq-heading-8">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 border-b border-gray-200 py-5 text-left font-semibold dark:border-gray-700"
+              data-accordion-target="#faq-body-8"
+              aria-expanded="false"
+              aria-controls="faq-body-8"
+            >
+              <span>¿Puedo ver el progreso del proyecto?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-8" class="hidden" aria-labelledby="faq-heading-8">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              Sí. La comunicación y el seguimiento se coordinan directamente
+              durante el desarrollo.
+            </p>
+          </div>
+
+          <h3 id="faq-heading-9">
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-4 py-5 text-left font-semibold"
+              data-accordion-target="#faq-body-9"
+              aria-expanded="false"
+              aria-controls="faq-body-9"
+            >
+              <span>¿Las promociones se aplican a los extras?</span>
+              <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 10 6" aria-hidden="true">
+                <path d="M9 1 5 5 1 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+              </svg>
+            </button>
+          </h3>
+
+          <div id="faq-body-9" class="hidden" aria-labelledby="faq-heading-9">
+            <p class="py-4 leading-relaxed text-gray-600 dark:text-gray-400">
+              Sí. La promoción se aplica al subtotal del proyecto, por lo
+              que también puede afectar páginas, extras, hosting y entrega.
+              El mantenimiento mensual se calcula por separado y no forma
+              parte del descuento.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="mx-auto max-w-screen-xl px-4 py-14 text-center">
+
+        <h2 class="text-3xl font-bold">
+          ¿No estás seguro de qué elegir?
+        </h2>
+
+        <p class="mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
+          No hace falta que tengas definido todo. Podemos revisar juntos
+          qué necesita tu proyecto y ajustar el alcance.
+        </p>
+
+        <a
+          href="https://wa.me/?text=Hola%20LM%20Studio%2C%20quiero%20consultar%20qu%C3%A9%20tipo%20de%20proyecto%20web%20me%20conviene."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-6 inline-flex rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          Consultar por WhatsApp
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+    <div class="mx-auto max-w-screen-xl px-4 py-8">
+
+      <div class="flex flex-col gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          © 2026 LM Studio. Todos los derechos reservados.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 text-sm sm:justify-end">
+
+          <a
+            href="./politica-privacidad.html"
+            class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            Privacidad
+          </a>
+
+          <a
+            href="./politica-cookies.html"
+            class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            Cookies
+          </a>
+
+          <a
+            href="./terminos-condiciones.html"
+            class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            Términos y condiciones
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"
+    integrity="sha384-dXMudAuWq5MLjG7Tex8rC+3U/BPQ/OUAF6UyUa7DWzfAMW1JRIf2NuW2hAyGtsvO"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/jspdf@4.2.1/dist/jspdf.umd.min.js"
+    integrity="sha384-qovJwSBbRDPP5cEjCp8S0UP66wrvnjaa60XMOGzTNanrThcrGfXfnZkvgY8N1KT3"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="../js/precios.js"></script>
+
+</body>
+</html>
