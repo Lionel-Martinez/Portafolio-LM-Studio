@@ -46,9 +46,10 @@
 
 .hero-kicker {
   padding: .55rem .75rem;
-  border: 1px solid rgba(255, 255, 255, .75);
+  border: 2px solid $color-text-white;
   color: $color-text-white;
   background: rgba(0, 0, 0, .22);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, .8);
 }
 
 .hero-button {
@@ -60,13 +61,15 @@
   padding: .7rem 1.15rem;
   border: 2px solid $color-border;
   border-radius: $radius-xl;
+  box-shadow: 4px 4px 0 $color-border;
   font-size: .9rem;
   font-weight: 800;
-  transition: transform $transition-fast, background-color $transition-fast, color $transition-fast;
+  transition: transform $transition-fast, box-shadow $transition-fast, background-color $transition-fast, color $transition-fast;
 }
 
 .hero-button:hover {
-  transform: translateY(-2px);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 $color-border;
 }
 
 .hero-button.primary {
@@ -153,9 +156,28 @@
 .project-card,
 .contact-form {
   border: 2px solid $color-border;
-  border-radius: $radius-2xl;
+  border-radius: $radius-lg;
   background: $color-background;
   box-shadow: $shadow-card;
+}
+
+.about-card,
+.service-card,
+.process-card {
+  transition: transform $transition-fast, box-shadow $transition-fast;
+}
+
+.about-card:hover,
+.service-card:hover,
+.process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: $shadow-card-hover;
+}
+
+.dark .about-card:hover,
+.dark .service-card:hover,
+.dark .process-card:hover {
+  box-shadow: 7px 7px 0 $color-text-white;
 }
 
 .dark .about-card,
@@ -208,12 +230,8 @@
 
 .service-card {
   padding: 1.4rem;
-  transition: transform $transition-fast;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-}
 
 .service-number {
   font-size: .8rem;
