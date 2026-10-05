@@ -471,9 +471,14 @@
 }
 
 .cta-section {
+  background: $color-background-section;
+  color: $color-text;
+  border-bottom: 2px solid $color-border;
+}
+
+.dark .cta-section {
   background: $color-text;
   color: $color-text-white;
-  border-bottom: 2px solid $color-border;
 }
 
 .cta-section .section-label {
