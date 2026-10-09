@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portafolio-lm-studio.netlify.app/sitemap.xml
+Sitemap: https://lm-studio.com.ar/sitemap.xml
