@@ -82,7 +82,7 @@
     }
 
     const today = new Date();
-    const end = new Date("2026-12-31T23:59:59-03:00");
+    const end = new Date("2026-11-12T23:59:59-03:00");
 
     return today <= end ? percent : 0;
   }
@@ -206,7 +206,7 @@
     const description = document.createElement("span");
     description.className = "ml-2";
     description.textContent =
-      "El descuento se aplica sobre el subtotal final de tu configuración. Vigencia hasta el 31/12/2026.";
+      "El descuento se aplica sobre el subtotal final de tu configuración. Vigencia hasta el 12/11/2026.";
 
     promotionBox.append(title, description);
     elements.promoBanner.append(promotionBox);
