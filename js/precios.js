@@ -504,7 +504,7 @@ Precio final estimado: ${money(pricing.total)}
 Quisiera consultar el presupuesto definitivo.`;
 
       elements.whatsappBtn.href =
-        `https://wa.me/?text=${encodeURIComponent(message)}`;
+        `https://wa.me/5493878342800?text=${encodeURIComponent(message)}`;
     }
   }
 
